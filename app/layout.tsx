@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/Header";
 export const metadata: Metadata = {
 title: {
-template: "%s | Eshop",
-default: "Eshop",
+template: "%s | Shoe-Store",
+default: "Shoe-Store",
 },
-description: "The Best Eshop App Made at IT Academy Karakol",
+description: "The Best Shoe-Store App Made at IT Academy Karakol",
 };
 export default function RootLayout({
 children,
 }: Readonly<{
 children: React.ReactNode;
+
 }>) {
 return (
 <html lang="en">
-<body className="font-poppins antialiased">{children}</body>
+<body className="font-poppins antialiased">
+<Header />
+{children}
+</body>
 </html>
 );
 }

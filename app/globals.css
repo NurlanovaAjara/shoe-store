@@ -131,4 +131,8 @@
   body {
     @apply bg-background text-foreground;
 }
+.hover-effect {
+  @apply transition-all duration-300 ease-in-out;
+  }
+  
 }
