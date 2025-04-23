@@ -1,7 +1,13 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-function Logo({ className }: { className?: string }) {
+function Logo({
+  className,
+  spanDesing,
+}: {
+  className?: string;
+  spanDesing?: string;
+}) {
   return (
     <Link href={"/"}>
       <span
@@ -10,8 +16,13 @@ function Logo({ className }: { className?: string }) {
           className
         )}
       >
-        Shoe-Stor
-        <span className="text-gray-500 group-hover:text-black hover-effect">
+        Shoe-stor
+        <span
+          className={cn(
+            "text-gray-500 group-hover:text-black hover-effect",
+            spanDesing
+          )}
+        >
           e
         </span>
       </span>
