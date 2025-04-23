@@ -1,3 +1,4 @@
+import CartIcon from "./CartIcon";
 import Container from "./Container";
 import HeaderMenu from "./HeaderMenu";
 import Logo from "./Logo";
@@ -11,6 +12,7 @@ function Header() {
 
         <div className="w-auto md:w-1/3 flex items-center justify-end gap-5">
           <SearchBar />
+          <CartIcon />
         </div>
       </Container>
     </header>
