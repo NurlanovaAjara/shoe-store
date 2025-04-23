@@ -1,5 +1,6 @@
 import CartIcon from "./CartIcon";
 import Container from "./Container";
+import FavoriteButton from "./FavoriteButton";
 import HeaderMenu from "./HeaderMenu";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
@@ -13,6 +14,7 @@ function Header() {
         <div className="w-auto md:w-1/3 flex items-center justify-end gap-5">
           <SearchBar />
           <CartIcon />
+          <FavoriteButton />
         </div>
       </Container>
     </header>
