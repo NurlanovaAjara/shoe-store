@@ -5,10 +5,10 @@ import { banner_1 } from "@/images";
 
 function HomeBanner() {
   return (
-    <div className="py-16 md:py-0 bg-pink-100 rounded-lg px-10 lg:px-24 flex items-center justify-between">
+    <div className="py-16 md:py-0 bg-[#f5f5f5] rounded-lg px-10 lg:px-24 flex items-center justify-between">
       <div className="space-y-5">
         <Title>
-          Grab Upto 50% off on <br /> Selected Headphone
+          Fashion-forward shoes. <br /> Unmatched comfort. Always.
         </Title>
         <Link
           href="/shop"
@@ -20,7 +20,7 @@ function HomeBanner() {
       <div>
         <Image
           src={banner_1}
-          alt="Headphones on sale"
+          alt="Shoes on sale"
           className="hidden md:inline-flex w-96"
         />
       </div>
