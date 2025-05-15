@@ -5,10 +5,10 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: {
-    template: "%s | Eshop",
-    default: "Eshop",
+    template: "%s | Shoe-store",
+    default: "Shoe-store",
   },
-  description: "The Best Eshop App Made at IT Academy Karakol",
+  description: " The best shoe store in the world",
 };
 export default function RootLayout({
   children,

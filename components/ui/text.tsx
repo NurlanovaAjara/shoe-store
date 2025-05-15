@@ -10,7 +10,7 @@ const Title = ({
   return (
     <h2
       className={cn(
-        "text-3xl font-bold text-black tracking-wide font-sans",
+        "text-3xl font-bold text-shop_dark_green tracking-wide font-sans",
         className
       )}
     >
@@ -19,4 +19,28 @@ const Title = ({
   );
 };
 
-export { Title };
+const SubText = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return <p className={cn("text-gray-600 text-sm", className)}>{children}</p>;
+};
+
+const Subtitle = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <h3 className={cn("font-semibold text-gray-900 font-sans", className)}>
+      {children}
+    </h3>
+  );
+};
+
+export { Title, SubText, Subtitle };
