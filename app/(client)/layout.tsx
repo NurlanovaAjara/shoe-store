@@ -5,10 +5,10 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: {
-    template: "%s | Shoe-store",
-    default: "Shoe-store",
+    template: "%s | Shoe-Store",
+    default: "Shoe-Store",
   },
-  description: " The best shoe store in the world",
+  description: "the best shoe store in the Karakol",
 };
 export default function RootLayout({
   children,
@@ -17,12 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1">{children}</main>
-
-        <Footer />
-      </div>
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
     </ClerkProvider>
   );
 }
