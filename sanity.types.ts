@@ -365,3 +365,79 @@ export type Slug = {
 
 export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Order | Product | Brand | Blogcategory | BlockContent | Author | Address | Category | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: ./sanity/queries/query.ts
+// Variable: BRANDS_QUERY
+// Query: *[_type=='brand'] | order(name asc)
+export type BRANDS_QUERYResult = Array<{
+  _id: string;
+  _type: "brand";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  description?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+}>;
+// Variable: LATEST_BLOG_QUERY
+// Query: *[_type == 'blog' && isLatest == true]|order(name asc){...,blogcategories[]->{title}}
+export type LATEST_BLOG_QUERYResult = Array<never>;
+// Variable: DEAL_PRODUCTS
+// Query: *[_type == 'product' && status == 'hot'] | order(name asc){...,"categories": categories[]->title}
+export type DEAL_PRODUCTSResult = Array<{
+  _id: string;
+  _type: "product";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  slug?: Slug;
+  images?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
+  description?: string;
+  price?: number;
+  discount?: number;
+  categories: Array<string | null> | null;
+  stock?: number;
+  brand?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "brand";
+  };
+  status?: "hot" | "new" | "sale";
+  variant?: "appliances" | "gadget" | "others" | "refrigerators";
+  isFeatured?: boolean;
+}>;
+
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    "*[_type=='brand'] | order(name asc) ": BRANDS_QUERYResult;
+    " *[_type == 'blog' && isLatest == true]|order(name asc){\n...,\nblogcategories[]->{\ntitle\n}\n}": LATEST_BLOG_QUERYResult;
+    "*[_type == 'product' && status == 'hot'] | order(name asc){\n...,\"categories\": categories[]->title\n}": DEAL_PRODUCTSResult;
+  }
+}
