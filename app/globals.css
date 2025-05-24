@@ -137,5 +137,7 @@
 .hover-effect {
   @apply transition-all duration-300 ease-in-out;
   }
-  
+  .scrollbar-hide::-webkit-scrollbar {
+display: none;
+}
 }
