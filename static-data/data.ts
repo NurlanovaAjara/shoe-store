@@ -1,9 +1,8 @@
 export const headerData = [
   { title: "Home", href: "/" },
-  { title: "Men's", href: "/Men's" },
-  { title: "Women's", href: "/Women's" },
-  { title: "Sale", href: "/sale" },
-  { title: "New & Trending", href: "/new-trending" },
+  { title: "Shop", href: "/shop" },
+  { title: "Blog", href: "/blog" },
+  { title: "Hot Deals", href: "/deal" },
 ];
 export const quickLinksData = [
   { title: "About us", href: "/about" },
@@ -23,8 +22,8 @@ export const categoriesData = [
   { title: "Skateboarding", href: "skateboarding" },
 ];
 export const productType = [
-{ title: "Gadget", value: "gadget" },
-{ title: "Appliances", value: "appliances" },
-{ title: "Refrigerators", value: "refrigerators" },
-{ title: "Others", value: "others" },
+  { title: "Gadget", value: "gadget" },
+  { title: "Appliances", value: "appliances" },
+  { title: "Refrigerators", value: "refrigerators" },
+  { title: "Others", value: "others" },
 ];
