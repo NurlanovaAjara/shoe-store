@@ -14,14 +14,12 @@ const FavoriteButton = ({
 }) => {
   const { favoriteProduct, addToFavorite } = useStore();
   const [existingProduct, setExistingProduct] = useState<Product | null>(null);
-
   useEffect(() => {
     const availableItem = favoriteProduct.find(
       (item) => item?._id === product?._id
     );
     setExistingProduct(availableItem || null);
   }, [product, favoriteProduct]);
-
   const handleFavorite = (
     e: React.MouseEvent<HTMLSpanElement | HTMLButtonElement>
   ) => {
@@ -36,12 +34,11 @@ const FavoriteButton = ({
       });
     }
   };
-
   return (
     <>
       {!showProduct ? (
         <Link href={"/wishlist"} className="group relative">
-          <Heart className="w-5 h-5 text-black hover:text-white hover:bg-black rounded-full p-1 transition-colors" />
+          <Heart className="w-5 h-5 text-black hover:text-white hover-effect" />
           <span className="absolute -top-1 -right-1 bg-black text-white h-3.5 w-3.5 rounded-full text-xs font-semibold flex items-center justify-center">
             {favoriteProduct?.length ? favoriteProduct?.length : 0}
           </span>
@@ -49,15 +46,15 @@ const FavoriteButton = ({
       ) : (
         <button
           onClick={handleFavorite}
-          className="group relative border border-black hover:bg-black hover:text-white p-1.5 rounded-sm transition-colors"
+          className="group relative border border-black hover:bg-black hover:text-white hover-effect p-1.5 rounded-sm"
         >
           {existingProduct ? (
             <Heart
               fill="#000"
-              className="text-white group-hover:text-white w-5 h-5"
+              className="text-black group-hover:text-white hover-effect mt-.5 w-5 h-5"
             />
           ) : (
-            <Heart className="text-black group-hover:text-white w-5 h-5" />
+            <Heart className="text-black group-hover:text-white hover-effect mt-.5 w-5 h-5" />
           )}
         </button>
       )}
