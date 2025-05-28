@@ -17,8 +17,7 @@ const QuantityButtons = ({ product, className }: Props) => {
     if (itemCount > 1) {
       toast.success("Quantity Decreased successfully!");
     } else {
-      toast.success(`${product?.name?.substring(0, 12)} removed
-successfully!`);
+      toast.success(`${product?.name?.substring(0, 12)} removed successfully!`);
     }
   };
   const handleAddToCart = () => {
@@ -36,15 +35,11 @@ successfully!`);
         variant="outline"
         size="icon"
         disabled={itemCount === 0 || isOutOfStock}
-        className="w-6 h-6 border-[1px] hover:bg-shop_dark_green/20 hover-
-effect"
+        className="w-6 h-6 border-[1px] border-black text-black bg-white hover:bg-black hover:text-white transition-colors"
       >
         <Minus />
       </Button>
-      <span
-        className="font-semibold text-sm w-6 text-center text-
-shop_dark_color"
-      >
+      <span className="font-semibold text-sm w-6 text-center text-black">
         {itemCount}
       </span>
       <Button
@@ -52,8 +47,7 @@ shop_dark_color"
         variant="outline"
         size="icon"
         disabled={isOutOfStock}
-        className="w-6 h-6 border-[1px] hover:bg-shop_dark_green/20 hover-
-effect"
+        className="w-6 h-6 border-[1px] border-black text-black bg-white hover:bg-black hover:text-white transition-colors"
       >
         <Plus />
       </Button>
