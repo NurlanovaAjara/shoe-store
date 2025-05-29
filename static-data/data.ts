@@ -22,8 +22,8 @@ export const categoriesData = [
   { title: "Skateboarding", href: "skateboarding" },
 ];
 export const productType = [
-  { title: "Gadget", value: "gadget" },
-  { title: "Appliances", value: "appliances" },
-  { title: "Refrigerators", value: "refrigerators" },
+  { title: "Brand", value: "brand" },
+  { title: "Convenience", value: "convenience" },
+  { title: "Sports", value: "sports" },
   { title: "Others", value: "others" },
 ];
